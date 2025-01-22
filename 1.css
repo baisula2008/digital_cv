@@ -1,0 +1,698 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-image: url('1.png'); /* 修改背景图片为 1.png */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: transparent;
+    color: #fff;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 0.5rem 0; /* 减小上下内边距 */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 50px; /* 减小导航栏高度 */
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center; /* 垂直居中导航项 */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* 垂直居中导航项 */
+    height: 100%;
+}
+
+nav ul li {
+    margin-right: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px; /* 稍微减小字体大小 */
+    transition: color 0.3s ease;
+    padding: 0 10px;
+}
+
+nav ul li a:hover {
+    color: #1e90ff;
+}
+
+main {
+    background-color: transparent;
+    padding-top: 70px; /* 减小顶部内边距 */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+    min-height: calc(100vh - 120px);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+section {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 添加文字阴影增加可读性 */
+}
+
+p, span {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 添加文字阴影增加可读性 */
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.skill {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-bottom: 10px;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+#skills h2 {
+    text-align: left;
+}
+
+#skills {
+    padding-left: 20px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.project {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.project h3 {
+    margin-top: 0;
+    color: #f0f0f0;
+}
+
+.project p {
+    margin-bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .skill-container, .project-container {
+        flex-direction: column;
+    }
+    
+    .project {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: auto;
+        padding: 0.3rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    main {
+        padding-top: 60px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+#home, #expe {
+    height: auto;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#home .profile-container {
+    margin-bottom: 30px;
+}
+
+#home .profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+#expe {
+    padding: 30px;
+}
+
+/* 响应式布局调整 */
+@media (max-width: 968px) {
+    .top-sections-container {
+        grid-template-columns: 1fr;
+    }
+
+    #home, #expe {
+        max-width: 100%;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 确保其他 section 保持原有布局 */
+section:not(#home):not(#expe) {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.top-sections-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: transparent;
+}
+
+body, html {
+    color: #ffffff; /* 确保所有文字为白色 */
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 添加文字阴影增加可读性 */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* 轻微的暗色叠加 */
+    z-index: -1;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* 确保图片和其他元素不会超出容器 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 响应式布局调整 */
+@media (max-width: 768px) {
+    section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .content-wrapper {
+        margin-left: 20px;
+    }
+
+    footer {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    #contact {
+        margin-bottom: 40px;
+    }
+}
+
+/* 确保所有内容容器都左对齐 */
+.project-container,
+.skill-container,
+.contact-info,
+.experience {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* 添加一些动画效果 */
+.project:hover, .project.fade-in:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 证书和联系方式样式 */
+#certificates, #contact {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* 确保内容可读性 */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#contact {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-item h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.contact-item span {
+    display: block;
+    color: #fff;
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* 下载按钮样式 */
+.download-cv {
+    background-color: #1e90ff;
+    padding: 8px 15px !important;
+    border-radius: 5px;
+    transition: all 0.3s ease !important;
+}
+
+.download-cv:hover {
+    background-color: #0066cc;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* 调整导航栏中最后一个项目的样式 */
+nav ul li:last-child {
+    margin-left: auto; /* 将下载按钮推到右边 */
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    nav ul li:last-child {
+        margin-left: 0;
+    }
+    
+    .download-cv {
+        width: fit-content;
+    }
+}
+
+.download-cv-big {
+    display: inline-block;
+    background-color: #1e90ff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.download-cv-big:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* 下拉菜单样式 */
+.cv-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(30, 144, 255, 0.2);
+}
+
+.cv-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 修改大按钮容器样式 */
+.cv-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* 调整大按钮样式 */
+.download-cv-big {
+    flex: 1;
+    text-align: center;
+    max-width: 200px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .cv-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .download-cv-big {
+        max-width: 100%;
+    }
+    
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+/* 项目链接样式 */
+.project-link {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* 联系方式链接样式 */
+.contact-link {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* 证书容器样式 */
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.certificate-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.certificate-item:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.cert-link {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.cert-link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* 证书标题样式调整 */
+.certificate-item h4 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .certificates-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 左右布局容器 */
+.side-by-side-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.left-content {
+    flex: 2;
+    max-width: 800px;
+}
+
+.right-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* 课程部分样式 */
+#courses {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    position: sticky;
+    top: 80px;
+}
+
+.courses-container {
+    margin-top: 20px;
+}
+
+.course-item {
+    margin-bottom: 25px;
+}
+
+.course-item h3 {
+    color: #1e90ff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.course-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-item ul li {
+    color: #fff;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.course-item ul li:hover {
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .side-by-side-container {
+        flex-direction: column;
+    }
+
+    .right-content {
+        min-width: 100%;
+    }
+
+    #courses {
+        position: static;
+    }
+}
+
+/* 工作经验链接样式 */
+.experience-link {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.experience-link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
